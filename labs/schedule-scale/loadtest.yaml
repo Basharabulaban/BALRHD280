@@ -22,13 +22,7 @@ items:
         containers:
         - image: quay.io/redhattraining/loadtest:v1.0
           name: loadtest
-          resources:
-            requests:
-              cpu: "100m"
-              memory: 20M
-            limits:
-              cpu: "500m"
-              memory: 200M
+          resources: {}
   status: {}
 - apiVersion: v1
   kind: Service
@@ -56,7 +50,7 @@ items:
       app: loadtest
     name: loadtest
   spec:
-    host: "loadtest.apps.ocp4.example.com"
+    host: ""
     port:
       targetPort: 8080
     subdomain: ""
